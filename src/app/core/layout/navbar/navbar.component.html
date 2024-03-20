@@ -1,0 +1,16 @@
+<header>
+  <nav class="flex flex-row items-center justify-between">
+
+      <a routerLink="/" class="h-10 w-20">
+        <img [src]="BOOK_LIBRARY_LOGO" alt="App logo">
+      </a>
+    <div class="flex flex-row gap-x-8 links">
+      @for(link of links; track i; let i = $index) {
+        <a [routerLink]="link.route" routerLinkActive="active">
+          {{link.label}}
+        </a>
+      }
+    </div>
+
+  </nav>
+</header>

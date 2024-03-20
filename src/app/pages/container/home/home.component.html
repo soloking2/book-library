@@ -1,0 +1,26 @@
+<div class="flex flex-col">
+  <p class="text-black text-xl">Subject: {{subject | titlecase}}</p>
+
+  @if(isLoading) {
+    <bl-loading-state ></bl-loading-state >
+
+  }
+  @if(BOOKS$ | async; as books) {
+    <div class="mt-5 gap-x-10 grid grid-cols-1 sm:grid-col-2 md:grid-cols-3">
+      @for(book of books; track book.key) {
+        <div class="mb-6 ">
+          <bl-book-item [book]="book">
+
+          </bl-book-item>
+
+        </div>
+
+      }
+    </div>
+    @if(!books.length) {
+      <bl-empty-state [emptyState]="emptyBookState">
+      </bl-empty-state>
+    }
+  }
+</div>
+

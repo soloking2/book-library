@@ -1,0 +1,19 @@
+<div class="flex flex-row gap-x-4 border border-gray-900 py-6 px-8 rounded-lg">
+  <div class="rounded-lg w-10 h-10">
+    <img [src]="contructImageUrl" [alt]="book.title" class="object-contain" onerror="this.onerror = null; this.src=fallBackImage">
+  </div>
+  <div class="flex flex-col w-72">
+    <p><span class="font-bold">Publisher Year:</span> {{book.first_publish_year}}</p>
+    <p><span class="font-bold">Book Title:</span> {{book.title}}</p>
+    <p><span class="font-bold">Author/s:</span> {{constructAuthorInfo}}</p>
+
+    <div class="flex flex-row justify-end gap-x-2 mt-2">
+      <a
+      class="cursor-pointer"
+      (click)="navigateToBookDetail(book)"
+      >View</a>
+      <span>|</span>
+      <a href="">wishlist</a>
+    </div>
+  </div>
+</div>

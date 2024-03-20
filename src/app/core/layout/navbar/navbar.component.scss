@@ -1,0 +1,21 @@
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 2;
+  padding: 1rem 2rem;
+}
+
+.links {
+  a {
+    font-weight: normal;
+    color: #475467;
+    &:hover {
+      color: black;
+    }
+    &.active {
+      color: #0e32e5;
+      font-weight: bold;
+    }
+  }
+}
